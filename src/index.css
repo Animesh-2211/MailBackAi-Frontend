@@ -41,7 +41,7 @@
 }
 
 .button-gradient {
-  @apply bg-gradient-to-r from-black to-gray-800 text-white hover:from-gray-800 hover:to-gray-700 transition-all duration-300;
+  @apply bg-gradient-to-r from-[#8B5CF6] to-[#6D28D9] text-white hover:from-[#7C3AED] hover:to-[#5B21B6] transition-all duration-300;
 }
 
 /* Add a subtle purple gradient for special elements */
