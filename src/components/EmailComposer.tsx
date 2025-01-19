@@ -47,7 +47,10 @@ export const EmailComposer = () => {
   };
 
   return (
-    <section className="max-w-4xl mx-auto px-4 py-12 animate-fade-up">
+    <section id="email-composer" className="max-w-4xl mx-auto px-4 py-24 animate-fade-up">
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+        Try It Yourself
+      </h2>
       <div className="glass-card rounded-2xl p-6 md:p-8 space-y-6">
         <div className="space-y-4">
           <Textarea
@@ -82,14 +85,12 @@ export const EmailComposer = () => {
         {generatedMessage && (
           <div className="space-y-4 animate-slide-up-fade">
             <div className="bg-secondary rounded-xl p-4">
-              <pre className="whitespace-pre-wrap font-sans">{generatedMessage}</pre>
+              <pre className="whitespace-pre-wrap font-sans">
+                {generatedMessage}
+              </pre>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button
-                variant="outline"
-                className="flex-1"
-                onClick={handleCopy}
-              >
+              <Button variant="outline" className="flex-1" onClick={handleCopy}>
                 <Copy className="mr-2 h-4 w-4" />
                 Copy to Clipboard
               </Button>
