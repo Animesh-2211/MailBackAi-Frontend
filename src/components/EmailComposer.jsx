@@ -3,7 +3,8 @@ import axios from 'axios';
 import { Box, Button, CircularProgress, Container, FormControl, InputLabel, MenuItem, Select, TextField, Typography } from '@mui/material';
 import { useToast } from "@/hooks/use-toast";
 
-const EmailComposer = () => {
+// Change to named export
+export const EmailComposer = () => {
   const [emailContent, setEmailContent] = useState('');
   const [tone, setTone] = useState('');
   const [generatedReply, setGeneratedReply] = useState('');
@@ -125,5 +126,3 @@ const EmailComposer = () => {
     </Container>
   );
 };
-
-export default EmailComposer;
