@@ -9,18 +9,18 @@ export const Testimonials = () => {
           {[
             {
               quote: "This tool has completely transformed how I handle my email communications. The time savings are incredible!",
-              author: "Sarah Johnson",
-              role: "Marketing Director",
+              author: "Anonymous",
+              role: "",
             },
             {
               quote: "The tone adjustment feature is a game-changer. I can maintain professionalism while being friendly and approachable.",
-              author: "Michael Chen",
-              role: "Sales Manager",
+              author: "Anonymous",
+              role: "",
             },
             {
               quote: "As a non-native English speaker, this tool helps me write more confidently and professionally.",
-              author: "Anna Kowalski",
-              role: "Product Designer",
+              author: "Anonymous",
+              role: "",
             },
           ].map((testimonial, index) => (
             <div

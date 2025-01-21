@@ -1,5 +1,5 @@
-import { Button } from "./ui/button";
 import { ArrowDown, Chrome } from "lucide-react";
+import { Button } from "./ui/button";
 
 export const Hero = () => {
   return (
@@ -13,10 +13,15 @@ export const Hero = () => {
           clear message, every time.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button className="button-gradient text-lg px-8 py-6 rounded-full animate-slide-up-fade group">
+        <a
+  className="button-gradient text-lg px-8 py-3 rounded-full animate-slide-up-fade group inline-flex items-center justify-center"
+  href="https://github.com/Animesh-2211/MailBackAI-Extension"
+  target="_blank"
+  rel="noopener noreferrer"
+>
             <Chrome className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
             Download Extension
-          </Button>
+          </a>
           <Button
             variant="outline"
             className="text-lg px-8 py-6 rounded-full animate-slide-up-fade"

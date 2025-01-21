@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import axios from 'axios';
-import { Box, Button, CircularProgress, Container, FormControl, InputLabel, MenuItem, Select, TextField, Typography } from '@mui/material';
 import { useToast } from "@/hooks/use-toast";
+import { Box, Button, CircularProgress, Container, FormControl, InputLabel, MenuItem, Select, TextField, Typography } from '@mui/material';
+import axios from 'axios';
+import { useState } from 'react';
 
 // Change to named export
 export const EmailComposer = () => {
@@ -24,12 +24,14 @@ export const EmailComposer = () => {
     setLoading(true);
     try {
       // This URL should be replaced with your actual backend endpoint
-      const response = await axios.post("/api/email/generate", {
-        emailContent,
+      const response = await axios.post("https://smart-ai-mail-assistant.onrender.com/api/email/generate", {
+         content:emailContent,
         tone
       });
+      // console.log("Response from server:", response.data);
+      // console.log(emailContent);
       
-      setGeneratedReply(response.data);
+      setGeneratedReply(typeof response.data === 'string' ? response.data : JSON.stringify(response.data));
       toast({
         title: "Success",
         description: "Reply generated successfully",
@@ -55,21 +57,22 @@ export const EmailComposer = () => {
   };
 
   return (
-    <Container className="py-8 glass-card my-8 rounded-lg">
-      <Typography variant="h3" component="h2" className="mb-6 text-center">
+    <Container className="py-8 glass-card  my-8 rounded-lg">
+     <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
         Email Reply Generator
-      </Typography>
+      </h2>
 
-      <Box className="space-y-6">
+      <Box className="space-y-9 rounded-lg">
         <TextField
           fullWidth
           multiline
-          rows={6}
+          rows={10}
           variant="outlined"
           label="Original Email Content"
           value={emailContent}
           onChange={(e) => setEmailContent(e.target.value)}
-          className="bg-white/50"
+          className="bg-white/50 glass-card "
+          
         />
 
         <FormControl fullWidth>
@@ -78,7 +81,7 @@ export const EmailComposer = () => {
             value={tone}
             label="Tone (Optional)"
             onChange={(e) => setTone(e.target.value)}
-            className="bg-white/50"
+            className="bg-white/50 glass-card"
           >
             <MenuItem value="">None</MenuItem>
             <MenuItem value="professional">Professional</MenuItem>
@@ -93,7 +96,7 @@ export const EmailComposer = () => {
           onClick={handleSubmit}
           disabled={loading}
           fullWidth
-          className="button-gradient"
+          className="button-gradient rounded-lg"
         >
           {loading ? <CircularProgress size={24} /> : "Generate Reply"}
         </Button>
@@ -110,7 +113,7 @@ export const EmailComposer = () => {
             rows={6}
             variant="outlined"
             value={generatedReply}
-            InputProps={{ readOnly: true }}
+            // InputProps={{ readOnly: true }}
             className="bg-white/50"
           />
           

@@ -1,11 +1,9 @@
-import { Hero } from "@/components/Hero";
 import { EmailComposer } from "@/components/EmailComposer";
+import { FAQ } from "@/components/FAQ";
 import { Features } from "@/components/Features";
+import { Hero } from "@/components/Hero";
 import { HowItWorks } from "@/components/HowItWorks";
 import { Testimonials } from "@/components/Testimonials";
-import { Pricing } from "@/components/Pricing";
-import { FAQ } from "@/components/FAQ";
-import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -13,11 +11,13 @@ const Index = () => {
       <Hero />
       <Features />
       <HowItWorks />
+      <section id="email-composer">
       <EmailComposer />
+      </section>
       <Testimonials />
-      <Pricing />
+      {/* <Pricing /> */}
       <FAQ />
-      <Footer />
+      {/* <Footer /> */}
     </main>
   );
 };
